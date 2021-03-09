@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">MyBonchProject</string>
-    <string name="emailTextView">Email</string>
+    <string name="emailTextView">" Email"</string>
     <string name="LolTextView">Лол</string>
     <string name="e_mailEditView">E-mail</string>
     <string name="nameEditView">Имя</string>
@@ -9,4 +9,8 @@
     <string name="passwordEditView2">Повторите пароль</string>
     <string name="registrationButton">Регистрация</string>
     <string name="isAccountTextView">Уже есть аккаунт? Войти</string>
+    <string name="enteringButton">Войти</string>
+    <string name="noAccountTextView">Нет аккаунта? Зарегайся!</string>
+    <string name="kekTextView">Кек</string>
+    <string name="good_russian_music_picture">good Russian Music Picture</string>
 </resources>
