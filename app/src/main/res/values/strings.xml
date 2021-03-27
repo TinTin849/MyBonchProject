@@ -13,4 +13,5 @@
     <string name="noAccountTextView">Нет аккаунта? Зарегайся!</string>
     <string name="kekTextView">Кек</string>
     <string name="good_russian_music_picture">good Russian Music Picture</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

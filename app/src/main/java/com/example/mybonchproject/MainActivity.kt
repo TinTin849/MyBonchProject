@@ -1,21 +1,24 @@
 package com.example.mybonchproject
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.service.autofill.OnClickAction
-import android.view.View
-import android.widget.TextView
+import android.os.Parcelable
+import com.example.mybonchproject.fragments.RegistrationLayout
+import com.example.mybonchproject.fragments.SigningLayout
+import kotlinx.parcelize.Parcelize
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-    }
 
-    fun onClick(view: View){
-        //написать сюда переход на вход
-        val intent = Intent(this, SigningLayout::class.java)
-        startActivity(intent)
+        val signingLayout = SigningLayout()
+        val registrationLayout = RegistrationLayout()
+
+        supportFragmentManager.beginTransaction().apply {
+            add(R.id.container, signingLayout)
+            commit()
+        }
     }
 }
+

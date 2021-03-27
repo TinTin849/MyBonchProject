@@ -4,126 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/editTextEmailAddress"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:drawableEnd="@drawable/ic_baseline_email_24"
-        android:ems="10"
-        android:hint="@string/e_mailEditView"
-        android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/editTextPersonName1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/editTextPassword2"
+    <FrameLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="25dp"
-        android:drawableEnd="@drawable/ic_baseline_lock_open_24"
-        android:ems="10"
-        android:hint="@string/passwordEditView2"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/buttonRegistration1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="201dp"
+        tools:layout_editor_absoluteY="360dp">
 
-    <EditText
-        android:id="@+id/editTextPersonName1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:drawableEnd="@drawable/ic_baseline_account_circle_24"
-        android:ems="10"
-        android:hint="@string/nameEditView"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/editTextPersonSurname1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/editTextPersonSurname1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:ems="10"
-        android:hint="@string/surnameEditView"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/editTextPassword1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/editTextPassword1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:drawableEnd="@drawable/ic_baseline_lock_24"
-        android:ems="10"
-        android:hint="@string/passwordEditView"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/editTextPassword2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-medium"
-        android:text="@string/LolTextView"
-        android:textColor="@color/buttonColor"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/buttonRegistration1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="25dp"
-        android:backgroundTint="@color/buttonColor"
-        android:fontFamily="sans-serif-medium"
-        android:text="@string/registrationButton"
-        android:textAllCaps="false"
-        android:textColor="#000000"
-        android:typeface="normal"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:onClick="onClick"
-        android:text="@string/isAccountTextView"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/emailTextView"
-        app:layout_constraintBottom_toTopOf="@+id/editTextEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
+    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
