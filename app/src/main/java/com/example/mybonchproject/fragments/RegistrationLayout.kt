@@ -51,13 +51,12 @@ class RegistrationLayout : Fragment() {
                 if(str.isNotEmpty()) str += "\n"
                 str += "Введите фамилию"
             }
-            /*
-            if (binding.editTextPassword1.text.equals(binding.editTextPassword2.text)){
+
+            if (binding.editTextPassword1.text.toString() != binding.editTextPassword2.text.toString()){
                 if(str.isNotEmpty()) str += "\n"
                 str += "Пароли должны совпадать"
-                test++
             }
-            */
+
             if (str != "") {
                 showDialog(str)
             } else activity?.let { val intent = Intent(it, MainMenuActivity::class.java)
