@@ -7,6 +7,7 @@ import com.example.mybonchproject.fragments.RegistrationLayout
 import com.example.mybonchproject.fragments.SigningLayout
 import kotlinx.parcelize.Parcelize
 
+//Основная активити-фундамент
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -15,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         val signingLayout = SigningLayout()
         val registrationLayout = RegistrationLayout()
 
+        //Запуск стартового фрагмента авторизации
         supportFragmentManager.beginTransaction().apply {
             add(R.id.container, signingLayout)
             commit()

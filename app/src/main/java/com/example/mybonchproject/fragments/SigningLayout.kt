@@ -2,7 +2,6 @@ package com.example.mybonchproject.fragments
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,11 +10,11 @@ import com.example.mybonchproject.MainMenuActivity
 import com.example.mybonchproject.R
 import com.example.mybonchproject.User
 import com.example.mybonchproject.databinding.FragmentSigninLayoutBinding
-import kotlinx.parcelize.Parcelize
 
+//Экран авторизации по паролю и почте
 class SigningLayout : Fragment() {
+    //Подключение удобного интерфейса binding
     private var fragmentSigningLayoutBinding: FragmentSigninLayoutBinding? = null
-    private val welcome = "Можно простить уход, но как простить возвращение?"
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,12 +30,14 @@ class SigningLayout : Fragment() {
         val binding = FragmentSigninLayoutBinding.bind(view)
         fragmentSigningLayoutBinding = binding
 
+        //Переключение между регистрацией и авторизацией
         binding.textView6.setOnClickListener {
             val fr = fragmentManager?.beginTransaction()
             fr?.replace(R.id.container, RegistrationLayout())
             fr?.commit()
         }
 
+        //Кнопка запуска процесса входа
         binding.buttonEntering.setOnClickListener {
             var counter:Int = 0
             if (binding.editTextEmailAddress2.text.isEmpty()){
@@ -47,11 +48,11 @@ class SigningLayout : Fragment() {
             }
 
             when (counter) {
-                1 -> showDialog("Введите электронную почту!")
-                2 -> showDialog("Введите пароль!")
-                3 -> showDialog("Введите данные!")
+                1 -> showDialog(getString(R.string.emailWarningSign))
+                2 -> showDialog(getString(R.string.passwordWarningSign))
+                3 -> showDialog(getString(R.string.dataWarningSign))
                 else -> activity?.let { val intent = Intent(it, MainMenuActivity::class.java)
-                    intent.putExtra("message", welcome)
+                    intent.putExtra("message", getString(R.string.welcomeFromSign))
                     val pass = binding.editTextPassword3.text.toString()
                     val mail = binding.editTextEmailAddress2.text.toString()
                     intent.putExtra("userInfo", User(pass, mail))
@@ -61,6 +62,7 @@ class SigningLayout : Fragment() {
         }
     }
 
+    //Функция вызова предупреждения о незаполненных строках
     private fun showDialog(status:String) {
         val bundle = Bundle()
         bundle.putString("correction", status)

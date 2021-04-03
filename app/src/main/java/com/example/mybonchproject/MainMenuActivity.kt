@@ -3,11 +3,10 @@ package com.example.mybonchproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Parcelable
-import com.example.mybonchproject.databinding.ActivityMainBinding
 import com.example.mybonchproject.databinding.ActivityMainMenuBinding
-import com.example.mybonchproject.databinding.FragmentRegistrationLayoutBinding
 import kotlinx.parcelize.Parcelize
 
+//Активити послеавторизационного периода
 class MainMenuActivity : AppCompatActivity() {
     private var activityMainMenuBinding: ActivityMainMenuBinding? = null
 
@@ -19,15 +18,16 @@ class MainMenuActivity : AppCompatActivity() {
 
         setContentView(view)
 
+        //Получение данных авторизации
         val intent = intent
         val extra = intent.extras
 
         val message = extra?.getString("message")
-        binding.mainActivityMessage.setText(message)
+        binding.mainActivityMessage.text = message
 
         val bigUser = extra?.getParcelable<User>("userInfo")
         val info = "E-mail: " + bigUser?.userEmail + "\n" + "Пароль: " + bigUser?.userPassword
-        binding.userInfo.setText(info)
+        binding.userInfo.text = info
     }
 
     override fun onDestroy() {
@@ -36,5 +36,6 @@ class MainMenuActivity : AppCompatActivity() {
     }
 }
 
+//Класс передачи данных о пользователе
 @Parcelize
 data class User(val userPassword: String?, val userEmail: String?): Parcelable

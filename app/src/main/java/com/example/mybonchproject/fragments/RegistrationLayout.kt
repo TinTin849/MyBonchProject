@@ -2,7 +2,6 @@ package com.example.mybonchproject.fragments
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,12 +10,11 @@ import com.example.mybonchproject.MainMenuActivity
 import com.example.mybonchproject.R
 import com.example.mybonchproject.User
 import com.example.mybonchproject.databinding.FragmentRegistrationLayoutBinding
-import kotlinx.parcelize.Parcelize
 
-
+//Экран регистрации с нуля
 class RegistrationLayout : Fragment() {
+    //Подключение удобного интерфейса binding
     private var fragmentRegistrationLayout: FragmentRegistrationLayoutBinding? = null
-    private val welcome = "Вы успешно внесены в Тетрадь смерти!"
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,35 +30,37 @@ class RegistrationLayout : Fragment() {
         val binding = FragmentRegistrationLayoutBinding.bind(view)
         fragmentRegistrationLayout = binding
 
+        //Переключение между регистрацией и авторизацией
         binding.textView3.setOnClickListener {
             val fr = fragmentManager?.beginTransaction()
             fr?.replace(R.id.container, SigningLayout())
             fr?.commit()
         }
 
+        //Кнопка запуска процесса регистрации
         binding.buttonRegistration1.setOnClickListener {
             var str = ""
             if (binding.editTextEmailAddress.text.isEmpty()){
-                str += "Введите адрес электронной почты"
+                str += getString(R.string.emailWarningReg)
             }
             if (binding.editTextPersonName1.text.isEmpty()){
                 if(str.isNotEmpty()) str += "\n"
-                str += "Введите имя"
+                str += getString(R.string.nameWarningReg)
             }
             if (binding.editTextPersonSurname1.text.isEmpty()){
                 if(str.isNotEmpty()) str += "\n"
-                str += "Введите фамилию"
+                str += getString(R.string.surnameWarningReg)
             }
 
             if (binding.editTextPassword1.text.toString() != binding.editTextPassword2.text.toString()){
                 if(str.isNotEmpty()) str += "\n"
-                str += "Пароли должны совпадать"
+                str += getString(R.string.passwordWarningReg)
             }
 
             if (str != "") {
                 showDialog(str)
             } else activity?.let { val intent = Intent(it, MainMenuActivity::class.java)
-                intent.putExtra("message", welcome)
+                intent.putExtra("message", getString(R.string.welcomeFromReg))
                 val pass = binding.editTextPassword1.text.toString()
                 val mail = binding.editTextEmailAddress.text.toString()
                 intent.putExtra("userInfo", User(pass, mail))
@@ -69,6 +69,7 @@ class RegistrationLayout : Fragment() {
         }
     }
 
+    //Функция вызова предупреждения о незаполненных строках
     private fun showDialog(status:String) {
         val bundle = Bundle()
         bundle.putString("correction", status)
