@@ -23,4 +23,7 @@
     <string name="emailWarningSign">Введите электронную почту!</string>
     <string name="passwordWarningSign">Введите пароль!</string>
     <string name="dataWarningSign">Введите данные!</string>
+    <string name="messageEnteringHint">Введите сообщение…</string>
+    <string name="user_avatar">user avatar</string>
+    <string name="entering_of_message">entering of message</string>
 </resources>
