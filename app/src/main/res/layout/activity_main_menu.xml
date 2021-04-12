@@ -33,7 +33,7 @@
             android:layout_height="match_parent"
             android:gravity="center_vertical"
             android:minHeight="70dp"
-            android:text="Герман Греф\nПросто текст"
+            android:text="@string/nameOfChat"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="18sp" />

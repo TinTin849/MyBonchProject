@@ -26,4 +26,18 @@
     <string name="messageEnteringHint">Введите сообщение…</string>
     <string name="user_avatar">user avatar</string>
     <string name="entering_of_message">entering of message</string>
+    <string name="nameOfChat">Герман Греф\nПросто текст</string>
+
+    <string-array name="botMessages">
+        <item>Первый ответ</item>
+        <item>Второй ответ</item>
+        <item>Третий ответ</item>
+        <item>Четвёртый ответ</item>
+        <item>Ответный ответ</item>
+        <item>Шутливый ответ</item>
+        <item>Усталый ответ</item>
+        <item>Грутсный ответ</item>
+        <item>Игнорирование</item>
+        <item>Пользователь заблокирован</item>
+    </string-array>
 </resources>

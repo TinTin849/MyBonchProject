@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.mybonchproject.MainMenuActivity
 import com.example.mybonchproject.R
-import com.example.mybonchproject.User
 import com.example.mybonchproject.databinding.FragmentRegistrationLayoutBinding
 
 //Экран регистрации с нуля
@@ -60,10 +59,10 @@ class RegistrationLayout : Fragment() {
             if (str != "") {
                 showDialog(str)
             } else activity?.let { val intent = Intent(it, MainMenuActivity::class.java)
-                intent.putExtra("message", getString(R.string.welcomeFromReg))
-                val pass = binding.editTextPassword1.text.toString()
-                val mail = binding.editTextEmailAddress.text.toString()
-                intent.putExtra("userInfo", User(pass, mail))
+                //intent.putExtra("message", getString(R.string.welcomeFromReg))
+                //val pass = binding.editTextPassword1.text.toString()
+                //val mail = binding.editTextEmailAddress.text.toString()
+                //intent.putExtra("userInfo", User(pass, mail))
                 it.startActivity(intent)
             }
         }

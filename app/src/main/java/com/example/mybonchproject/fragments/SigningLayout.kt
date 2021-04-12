@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.mybonchproject.MainMenuActivity
 import com.example.mybonchproject.R
-import com.example.mybonchproject.User
 import com.example.mybonchproject.databinding.FragmentSigninLayoutBinding
 
 //Экран авторизации по паролю и почте
@@ -52,10 +51,10 @@ class SigningLayout : Fragment() {
                 2 -> showDialog(getString(R.string.passwordWarningSign))
                 3 -> showDialog(getString(R.string.dataWarningSign))
                 else -> activity?.let { val intent = Intent(it, MainMenuActivity::class.java)
-                    intent.putExtra("message", getString(R.string.welcomeFromSign))
-                    val pass = binding.editTextPassword3.text.toString()
-                    val mail = binding.editTextEmailAddress2.text.toString()
-                    intent.putExtra("userInfo", User(pass, mail))
+                    //intent.putExtra("message", getString(R.string.welcomeFromSign))
+                    //val pass = binding.editTextPassword3.text.toString()
+                    //val mail = binding.editTextEmailAddress2.text.toString()
+                    //intent.putExtra("userInfo", User(pass, mail))
                     it.startActivity(intent)
                 }
             }

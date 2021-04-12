@@ -5,25 +5,25 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import java.util.*
 import kotlin.collections.ArrayList
 
+//Адаптер для чата
 class RvAdapter:RecyclerView.Adapter<RvAdapter.ViewHolder>() {
-
+    //Массив хранения всех сообщений
     var array = arrayListOf<String>()
 
-    fun setData(arr:ArrayList<String>){
-        array = arr
+    fun setData(array:ArrayList<String>){
+        this.array = array
         notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        //Разделение на сообщения пользователя и бота
         val view = if (viewType == 0){
             LayoutInflater.from(parent.context).inflate(R.layout.item, parent, false)
         }else{
             LayoutInflater.from(parent.context).inflate(R.layout.item2, parent, false)
         }
-
         return ViewHolder(view)
     }
 
@@ -39,7 +39,6 @@ class RvAdapter:RecyclerView.Adapter<RvAdapter.ViewHolder>() {
         val textView = itemView.findViewById<TextView>(R.id.textOfItem)
         fun bind(str:String){
             textView.text = str
-
         }
     }
 }
