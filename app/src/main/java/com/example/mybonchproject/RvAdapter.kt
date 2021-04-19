@@ -14,7 +14,7 @@ class RvAdapter:RecyclerView.Adapter<RvAdapter.ViewHolder>() {
 
     fun setData(array:ArrayList<String>){
         this.array = array
-        notifyDataSetChanged()
+        notifyItemInserted(array.size-1)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -27,18 +27,17 @@ class RvAdapter:RecyclerView.Adapter<RvAdapter.ViewHolder>() {
         return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(array[position])
-    }
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {holder.bind(array[position])}
 
+    //Деление сообщений на типы (отправленные и полученные)
     override fun getItemViewType(position: Int) = position%2
 
     override fun getItemCount() = array.size
 
     inner class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
-        val textView = itemView.findViewById<TextView>(R.id.textOfItem)
+        private val messageTextView: TextView? = itemView.findViewById<TextView>(R.id.textOfItem)
         fun bind(str:String){
-            textView.text = str
+            messageTextView?.text = str
         }
     }
 }
