@@ -1,9 +1,9 @@
-package com.example.mybonchproject
+package com.example.mybonchproject.messagingAppPart
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.mybonchproject.fragments.RegistrationLayout
-import com.example.mybonchproject.fragments.SigningLayout
+import com.example.mybonchproject.R
+import com.example.mybonchproject.helpersForWork.FragmentNavigator
 
 //Основная активити-фундамент
 class MainActivity : AppCompatActivity(), FragmentNavigator {
@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity(), FragmentNavigator {
         if (savedInstanceState == null) {
             supportFragmentManager
                     .beginTransaction()
-                    .add(R.id.container, SigningLayout())
+                    .add(R.id.mainActivityContainer, SigningPageFragment())
                     .commit()
         }
     }
@@ -25,12 +25,12 @@ class MainActivity : AppCompatActivity(), FragmentNavigator {
         if (type == 0){
             supportFragmentManager
                     .beginTransaction()
-                    .replace(R.id.container, RegistrationLayout())
+                    .replace(R.id.mainActivityContainer, RegistrationPageFragment())
                     .commit()
         } else {
             supportFragmentManager
                     .beginTransaction()
-                    .replace(R.id.container, SigningLayout())
+                    .replace(R.id.mainActivityContainer, SigningPageFragment())
                     .commit()
         }
     }

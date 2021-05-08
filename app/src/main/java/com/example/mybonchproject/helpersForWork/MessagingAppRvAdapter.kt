@@ -1,16 +1,17 @@
-package com.example.mybonchproject
+package com.example.mybonchproject.helpersForWork
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mybonchproject.R
 import kotlin.collections.ArrayList
 
 //Адаптер для чата
-class RvAdapter:RecyclerView.Adapter<RvAdapter.ViewHolder>() {
+class MessagingAppRvAdapter:RecyclerView.Adapter<MessagingAppRvAdapter.ViewHolder>() {
     //Массив хранения всех сообщений
-    var array = arrayListOf<String>()
+    private var array = arrayListOf<String>()
 
     fun setData(array:ArrayList<String>){
         this.array = array
@@ -20,9 +21,9 @@ class RvAdapter:RecyclerView.Adapter<RvAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         //Разделение на сообщения пользователя и бота
         val view = if (viewType == 0){
-            LayoutInflater.from(parent.context).inflate(R.layout.item, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.messaging_app_answer_one, parent, false)
         }else{
-            LayoutInflater.from(parent.context).inflate(R.layout.item2, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.messaging_app_answer_two, parent, false)
         }
         return ViewHolder(view)
     }

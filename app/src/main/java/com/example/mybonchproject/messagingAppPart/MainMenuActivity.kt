@@ -1,14 +1,16 @@
-package com.example.mybonchproject
+package com.example.mybonchproject.messagingAppPart
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import android.util.Log
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mybonchproject.R
 import com.example.mybonchproject.databinding.ActivityMainMenuBinding
+import com.example.mybonchproject.helpersForWork.MessengerAppViewModel
+import com.example.mybonchproject.helpersForWork.MessagingAppRvAdapter
 
 //Активити чата
 class MainMenuActivity : AppCompatActivity() {
@@ -20,10 +22,10 @@ class MainMenuActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        val mainViewModel = ViewModelProvider(this).get(MyViewModel::class.java)
+        val mainViewModel = ViewModelProvider(this).get(MessengerAppViewModel::class.java)
 
         //Настройка RecyclerView
-        val adapter = RvAdapter()
+        val adapter = MessagingAppRvAdapter()
         binding.RV.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
         binding.RV.adapter = adapter
 

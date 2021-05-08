@@ -7,7 +7,7 @@
     android:paddingLeft="20dp"
     android:paddingRight="20dp"
     android:paddingBottom="5dp"
-    tools:context=".fragments.SigningLayout">
+    tools:context=".messagingAppPart.SigningPageFragment">
 
     <TextView
         android:id="@+id/textView5"

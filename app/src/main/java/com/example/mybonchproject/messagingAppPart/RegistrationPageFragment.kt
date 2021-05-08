@@ -1,4 +1,4 @@
-package com.example.mybonchproject.fragments
+package com.example.mybonchproject.messagingAppPart
 
 import android.content.Context
 import android.content.Intent
@@ -7,13 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.mybonchproject.FragmentNavigator
-import com.example.mybonchproject.MainMenuActivity
+import com.example.mybonchproject.helpersForWork.FragmentNavigator
 import com.example.mybonchproject.R
 import com.example.mybonchproject.databinding.FragmentRegistrationLayoutBinding
 
 //Экран регистрации с нуля
-class RegistrationLayout : Fragment() {
+class RegistrationPageFragment : Fragment() {
     //Подключение удобного интерфейса binding
     private var fragmentRegistrationLayout: FragmentRegistrationLayoutBinding? = null
 
@@ -75,7 +74,7 @@ class RegistrationLayout : Fragment() {
     private fun showDialog(status:String) {
         val bundle = Bundle()
         bundle.putString("correction", status)
-        val dialogFragment = UncompletedLines()
+        val dialogFragment = UncompletedLinesDialogFragment()
         dialogFragment.arguments = bundle
 
         dialogFragment.show(childFragmentManager, "dialog_event")
