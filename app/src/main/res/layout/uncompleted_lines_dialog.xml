@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Поля не заполнены!"
+        android:text="@string/empty_lines_dialog"
         android:textAlignment="textStart"
         android:textColor="@color/black"
         android:textSize="20sp" />
@@ -22,8 +22,7 @@
         android:id="@+id/textView7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="6"
-        android:text="test" />
+        android:layout_weight="6" />
 
     <Button
         android:id="@+id/button"
@@ -31,6 +30,6 @@
         android:layout_height="wrap_content"
         android:layout_weight="2"
         android:backgroundTint="@color/buttonColor"
-        android:text="Ок"
+        android:text="@string/empty_lines_dialog_ok"
         android:textColor="@color/black" />
 </LinearLayout>

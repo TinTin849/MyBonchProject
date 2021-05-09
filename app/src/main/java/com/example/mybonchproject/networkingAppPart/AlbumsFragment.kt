@@ -32,6 +32,7 @@ class AlbumsFragment : Fragment() {
         val binding = FragmentAlbumsBinding.bind(view)
         fragmentAlbumsBinding = binding
 
+        //Корутина для обработки интернет-запроса
         GlobalScope.launch(Dispatchers.IO) {
             val response = newApi().getAlbum().awaitResponse()
             if (response.isSuccessful) {

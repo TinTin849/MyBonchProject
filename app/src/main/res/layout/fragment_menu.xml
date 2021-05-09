@@ -11,7 +11,7 @@
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:text="Albums"
+        android:text="@string/menu_frag_albums"
         app:layout_constraintEnd_toStartOf="@+id/newPostButton"
         app:layout_constraintTop_toTopOf="@+id/newPostButton" />
 
@@ -20,7 +20,7 @@
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:text="Users"
+        android:text="@string/menu_frag_users"
         app:layout_constraintStart_toEndOf="@+id/newPostButton"
         app:layout_constraintTop_toTopOf="@+id/newPostButton" />
 
@@ -28,7 +28,7 @@
         android:id="@+id/newPostButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CreatePost"
+        android:text="@string/menu_frag_createpost"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

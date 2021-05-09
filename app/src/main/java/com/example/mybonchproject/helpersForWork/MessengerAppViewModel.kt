@@ -10,12 +10,10 @@ class MessengerAppViewModel : ViewModel() {
 
     fun addingOfMes(mes: String){
         if (_viewState.value != null) {
-            //Log.d("testing", "second mess")
             _viewState.value!!.workArr.add(mes)
             val numAns = _viewState.value!!.numOfAnswer
             val ansArr = _viewState.value!!.workArr
             _viewState.value = MessengerAppDataClass(mes, numAns, ansArr)
-            //Log.d("testing", "funOk")
         } else {
             val initArr: ArrayList<String> = ArrayList()
             initArr.add(mes)
@@ -29,7 +27,6 @@ class MessengerAppViewModel : ViewModel() {
         } else {
             _viewState.value?.numOfAnswer = _viewState.value?.numOfAnswer?.plus(1)!!
         }
-        //Log.d("testing", "numOfAnswer ${_viewState.value!!.numOfAnswer}")
     }
 }
 

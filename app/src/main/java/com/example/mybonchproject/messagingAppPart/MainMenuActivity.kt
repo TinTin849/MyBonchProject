@@ -37,14 +37,11 @@ class MainMenuActivity : AppCompatActivity() {
                 val mes = binding.messageEditText.text.toString()
                 //Очистка поля ввода
                 binding.messageEditText.setText("")
-                //Log.d("testing", "Message is $mes")
                 mainViewModel.addingOfMes(mes)
-                //Log.d("testing", "written mes is ${mainViewModel.viewState.value?.userMessage}")
             }
         }
 
         mainViewModel.viewState.observe(this, Observer{
-            //Log.d("testing", "observerOK and ${it.workArr}")
 
             adapter.setData(it.workArr)
             binding.RV.scrollToPosition(adapter.itemCount - 1)

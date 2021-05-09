@@ -8,6 +8,7 @@ import com.example.mybonchproject.helpersForWork.FragmentNavigator
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+//Основная (Базовая) ссылка
 const val BASE_URL = "https://jsonplaceholder.typicode.com"
 
 class NetworkingActivity : AppCompatActivity(), FragmentNavigator {
@@ -47,6 +48,7 @@ class NetworkingActivity : AppCompatActivity(), FragmentNavigator {
     }
 }
 
+//Функция создания Retrofit
 fun newApi(): NetworkingRequests = Retrofit.Builder()
         .baseUrl(BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())

@@ -27,6 +27,15 @@
     <string name="user_avatar">user avatar</string>
     <string name="entering_of_message">entering of message</string>
     <string name="nameOfChat">Герман Греф\nПросто текст</string>
+    <string name="create_post_title">Title</string>
+    <string name="create_post_body">Body</string>
+    <string name="create_post_post">POST</string>
+    <string name="menu_frag_albums">Albums</string>
+    <string name="menu_frag_users">Users</string>
+    <string name="menu_frag_createpost">CreatePost</string>
+    <string name="empty_lines_dialog">Поля не заполнены!</string>
+    <string name="empty_lines_dialog_ok">Ок</string>
+    <string name="send_message_button_description">send message button</string>
 
     <string-array name="botMessages">
         <item>Первый ответ</item>
